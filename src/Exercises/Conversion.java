@@ -15,6 +15,7 @@ public class Conversion {
         System.out.println("d та i " + d + " " + i);
 
         System.out.println("\nПеретворення типу double в тип int ");
+        System.out.println("Hello");
         b = (byte) d;
         System.out.println("d  та b " + d + " "+ b);
     }
