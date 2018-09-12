@@ -1,6 +1,6 @@
 package Exercises;
 
-public class Long {
+public class Light {
     public static void main(String[] args) {
         int lightspeed;
         long days;
