@@ -16,10 +16,10 @@ import java.io.InputStreamReader;
         System.out.println(" 7 | 8 | 9 ");
 
     }
-    static void setStep(){
+   /* static void setStep(){
 
 
-    }
+    }*/
 
     static void show() {
 
