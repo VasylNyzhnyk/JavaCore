@@ -68,7 +68,7 @@ public class GameLogic {
 
     }
 
-    static boolean checkWinner(char n) {
+    static boolean checkWinner(int n) {
         int row = n - n % 3;
         if (arr[row] == arr[row + 1] && arr[row] == arr[row + 2]) return true;
         int column = n % 3;
