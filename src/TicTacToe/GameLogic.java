@@ -7,23 +7,20 @@ import java.io.InputStreamReader;
 import static TicTacToe.Field.*;
 
 public class GameLogic {
-
-
     public void start() {
         getUserMessage();
         for (int j = 0; j < arr.length; j++) {
             if (j % 2 == 0) {
-                System.out.println("Ходить O");
+                System.out.println("Ходить  - 0");
                 int number = getNumber();
-                arr[number] = (char) number;
                 arr[number] = USER_SYMBOL;
-
+                checkWinner();
                 show();
             } else {
-                System.out.println("Хід компютера X ");
+                System.out.println("Хід компютера -  X");
                 randomNumder();
+                checkWinner();
                 show();
-
             }
         }
     }
@@ -65,28 +62,29 @@ public class GameLogic {
         System.out.println(" 3 | 4 | 5 ");
         System.out.println("--- --- ---");
         System.out.println(" 6 | 7 | 8 ");
-
     }
 
-    static boolean checkWinner(int n) {
-        int row = n - n % 3;
-        if (arr[row] == arr[row + 1] && arr[row] == arr[row + 2]) return true;
-        int column = n % 3;
-        if (arr[column] == arr[column + 3])
-            if (arr[column] == arr[column + 6]) return true;
-        if (n % 2 != 0) return false;
-        if (n % 4 == 0) {
-            if (arr[0] == arr[4] && arr[0] == arr[8]) return true;
-            if (n != 4) return false;
+    static void checkWinner() {
+        for (int n = 0; n < arr.length - 3; n = n + 3) {
+            if (arr[n] == arr[n + 1] & arr[n] == arr[n + 2] & arr[n] != 0) {
+                System.out.println("Переміг гравець  " + arr[n]);
+            }
         }
-        return arr[2] == arr[4] && arr[2] == arr[6];
+        for (int n = 0; n < 3; n++) {
+            if (arr[n] == arr[n + 3] & arr[n] == arr[n + 6] & arr[n] != 0) {
+                System.out.println("Переміг гравець  " + arr[n]);
+            }
+        }
+        int n = 0;
+        if (arr[n] == arr[n + 4] & arr[n] == arr[n + 8] & arr[n] != 0) {
+            System.out.println("Переміг гравець  " + arr[n]);
+            if (arr[n + 2] == arr[n + 4] & arr[n + 2] == arr[n + 6] & arr[n + 2] != 0) {
+                System.out.println("Переміг гравець  " + arr[n]);
+            }
+        }
+
     }
-
 }
-
-
-
-
 
 
 
