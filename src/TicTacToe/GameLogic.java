@@ -68,18 +68,22 @@ public class GameLogic {
         for (int n = 0; n < arr.length - 3; n = n + 3) {
             if (arr[n] == arr[n + 1] & arr[n] == arr[n + 2] & arr[n] != 0) {
                 System.out.println("Переміг гравець  " + arr[n]);
+                System.exit(0);
             }
         }
         for (int n = 0; n < 3; n++) {
             if (arr[n] == arr[n + 3] & arr[n] == arr[n + 6] & arr[n] != 0) {
                 System.out.println("Переміг гравець  " + arr[n]);
+                System.exit(0);
             }
         }
         int n = 0;
         if (arr[n] == arr[n + 4] & arr[n] == arr[n + 8] & arr[n] != 0) {
             System.out.println("Переміг гравець  " + arr[n]);
+            System.exit(0);
             if (arr[n + 2] == arr[n + 4] & arr[n + 2] == arr[n + 6] & arr[n + 2] != 0) {
                 System.out.println("Переміг гравець  " + arr[n]);
+                System.exit(0);
             }
         }
 
